@@ -7,7 +7,7 @@ import math
 
 def get_cells(ind : int) -> Union[set, list]:
 
-    df = pd.read_csv("Local/certificate/card_cells.csv")
+    df = pd.read_csv("HeatMapApp/certificate/card_cells.csv")
 
     construct = df.iloc[ind-6]['card_cells']
 
