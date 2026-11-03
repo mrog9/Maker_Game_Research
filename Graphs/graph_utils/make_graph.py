@@ -4,9 +4,9 @@ import pandas as pd
 def create_graph():
 
     df = pd.read_csv("certificate/certificate.csv")
-    df = df['construction']
+    df = df['construction'] + df['reference']
 
-    G = nx.Graph()
+    G = nx.DiGraph()
 
     G.add_nodes_from([i for i in range(727)])
 
@@ -16,6 +16,13 @@ def create_graph():
         child_list = construct.split(" ")[2:]
 
         for c in child_list:
+
+            # "(" starts a card written in place; the token is its pivot, not a card number
+            if c.startswith("("):
+
+                continue
+
+            c = c.strip(")")
 
             other_node = None
 
