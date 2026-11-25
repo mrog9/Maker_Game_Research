@@ -210,7 +210,7 @@ def find_card_transforms(ind, ia_cell_str, a_cell_str, t_cell_str):
     
     cell_list = ia_cell_list + a_cell_list + t_cell_list
 
-    for r in range(1,8):
+    for r in range(8):
 
         ia_trans = find_transform(r, 0, 0, ia_cell_list)
         a_trans = find_transform(r, 0, 0, a_cell_list)
@@ -241,12 +241,13 @@ def generate_card_transforms():
 
         data.append(find_card_transforms(i, ia[i], a[i], t[i]))
 
-    cols_inter_A = ["A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
-    cols_A = ["A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
-    cols_T = ["T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7" ]
+    # column suffix = rotation code r, so A_0 is the identity
+    cols_inter_A = ["A_inter_0", "A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
+    cols_A = ["A_0", "A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
+    cols_T = ["T_0", "T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7" ]
     cols = []
 
-    for i in range(7):
+    for i in range(8):
 
         cols = cols + [cols_inter_A[i], cols_A[i], cols_T[i]]
 

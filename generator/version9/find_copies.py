@@ -7,9 +7,11 @@ def find_copies():
 
     df = pd.read_csv("generator/version9/unique_cards.csv")
 
-    cols_ia = ["A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
-    cols_a = ["A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
-    cols_t = ["T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7"]
+    # index 0 is the identity, so the pivots found here are in card i's own
+    # frame, the same frame as its A, T and inter_A columns
+    cols_ia = ["A_inter_0", "A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
+    cols_a = ["A_0", "A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
+    cols_t = ["T_0", "T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7"]
 
     unique_strategies = []
 

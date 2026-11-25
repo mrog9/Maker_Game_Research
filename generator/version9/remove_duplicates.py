@@ -9,9 +9,11 @@ def remove_duplicates():
 
     df = pd.read_csv("generator/version9/card_A_T_transforms.csv")
 
-    cols_ia = ["A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
-    cols_a = ["A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
-    cols_t = ["T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7"]
+    # index 0 is the identity, so each card is compared in its own frame
+    # against all 8 transforms of the later cards
+    cols_ia = ["A_inter_0", "A_inter_1", "A_inter_2", "A_inter_3", "A_inter_4", "A_inter_5", "A_inter_6", "A_inter_7"]
+    cols_a = ["A_0", "A_1", "A_2", "A_3", "A_4", "A_5", "A_6", "A_7"]
+    cols_t = ["T_0", "T_1", "T_2", "T_3", "T_4", "T_5", "T_6", "T_7"]
 
     # remove_inds_A = set()
     # remove_inds_T = set()
