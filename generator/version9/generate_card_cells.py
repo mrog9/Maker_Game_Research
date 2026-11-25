@@ -220,9 +220,9 @@ def find_card_cells(card_str):
     y1 = CHAR_TO_INT[card_list[1][4]]
     y2 = CHAR_TO_INT[card_list[2][4]]
 
-    a1_trans = transform(r1, x1, x2, base1)
+    a1_trans = transform(r1, x1, y1, base1)
     a2_trans = transform(r2, x2, y2, base2)
-    t1_trans = transform(r1, x1, x2, snaky)
+    t1_trans = transform(r1, x1, y1, snaky)
     t2_trans = transform(r2, x2, y2, snaky)
 
     inter_a_trans = [c for c in set(a1_trans) & set(a2_trans)]
